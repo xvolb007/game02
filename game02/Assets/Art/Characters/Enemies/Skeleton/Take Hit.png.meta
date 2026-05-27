@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 26
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,133 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: B_witch_idle_0
+      name: Take Hit_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 245
-        width: 22
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2561c131eb6828940800000000000000
-      internalID: 5296944262663640658
+      spriteID: a2fa646638dc3154d80068a920b5798e
+      internalID: 67501218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_1
+      name: Take Hit_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 197
-        width: 22
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ca8086d538cef900800000000000000
-      internalID: 720233123983428293
+      spriteID: 2022d9d50fac51c408b02bf8dd109b51
+      internalID: 786988071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_2
+      name: Take Hit_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 149
-        width: 22
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4dec9647aa24983d0800000000000000
-      internalID: -3203956360032432428
+      spriteID: fcff4afe63a26654d9c7ea6a53febcd5
+      internalID: -1349897847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_3
+      name: Take Hit_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 101
-        width: 21
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d2e04ef5541e847f0800000000000000
-      internalID: -628004459940409811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_4
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 53
-        width: 21
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86ecacb82a5aaf680800000000000000
-      internalID: -8720475610900935064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_witch_idle_5
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 5
-        width: 23
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b939b600b00c15970800000000000000
-      internalID: 8741979505187066779
+      spriteID: b54e6cb1b069f544d80a03ef636371c7
+      internalID: -33644477
       vertices: []
       indices: 
       edges: []
@@ -244,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 512c5c588dd92aa4f888a01cf649ac66
     internalID: 0
     vertices: []
     indices: 
@@ -252,14 +208,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.33000001311302187},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      B_witch_idle_0: 5296944262663640658
-      B_witch_idle_1: 720233123983428293
-      B_witch_idle_2: -3203956360032432428
-      B_witch_idle_3: -628004459940409811
-      B_witch_idle_4: -8720475610900935064
-      B_witch_idle_5: 8741979505187066779
+      Take Hit_0: 67501218
+      Take Hit_1: 786988071
+      Take Hit_2: -1349897847
+      Take Hit_3: -33644477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

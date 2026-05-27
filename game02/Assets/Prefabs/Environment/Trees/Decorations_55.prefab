@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5067892705415511520}
   - component: {fileID: 7475968877936846732}
   - component: {fileID: 5201027863749792885}
+  - component: {fileID: 8205947206825041475}
   m_Layer: 0
   m_Name: Decorations_55
   m_TagString: Untagged
@@ -126,6 +127,22 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010340452, y: -0.9927908}
-  m_Size: {x: 1.9523749, y: 0.93890154}
+  m_Offset: {x: 0.0044988156, y: 0.29823425}
+  m_Size: {x: 1.9776624, y: 1.2060173}
   m_Direction: 1
+--- !u!114 &8205947206825041475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471036647797659107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifierVolume
+  m_Size: {x: 2.0039854, y: 1.2891295, z: 4}
+  m_Center: {x: 0.0109677315, y: 0.34197295, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

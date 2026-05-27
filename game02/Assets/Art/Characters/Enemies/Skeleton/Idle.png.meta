@@ -109,67 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: B_witch_idle_3
+      name: Idle_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 101
-        width: 21
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d2e04ef5541e847f0800000000000000
-      internalID: -628004459940409811
+      spriteID: f10617de35e9a194da13ae8e120138ad
+      internalID: -2070354008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_4
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 53
-        width: 21
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 86ecacb82a5aaf680800000000000000
-      internalID: -8720475610900935064
+      spriteID: a20c08bec62ce1040b4844705e2236fa
+      internalID: -792155797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_witch_idle_5
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 5
-        width: 23
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b939b600b00c15970800000000000000
-      internalID: 8741979505187066779
+      spriteID: a7d8203c476195c4b8c95ce7f6c5cdb3
+      internalID: 1358289838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a78fa15600a684092c1902179b3ecf
+      internalID: -1962689661
       vertices: []
       indices: 
       edges: []
@@ -186,14 +208,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.33000001311302187},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      B_witch_idle_0: 5296944262663640658
-      B_witch_idle_1: 720233123983428293
-      B_witch_idle_2: -3203956360032432428
-      B_witch_idle_3: -628004459940409811
-      B_witch_idle_4: -8720475610900935064
-      B_witch_idle_5: 8741979505187066779
+      Idle_0: -2070354008
+      Idle_1: -792155797
+      Idle_2: 1358289838
+      Idle_3: -1962689661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
