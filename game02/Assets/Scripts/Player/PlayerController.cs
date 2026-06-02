@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
-    private float movingSpeed = 5f;
-    
+    private float _movingSpeed = 5f;
+    private Camera _mainCamera;
+
     private Rigidbody2D rigidbody2D;
     public Vector2 inputVector;
 
@@ -12,6 +14,16 @@ public class PlayerController : MonoBehaviour
     {
         Instance = this;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        _mainCamera = Camera.main;
+    }
+    private void Start()
+    {
+        GameInputController.Instance.OnPlayerAttack += Player_OnPlayerAttack;
+    }
+
+    private void Player_OnPlayerAttack(object sender, EventArgs e)
+    {
+        Debug.Log("Pressed in Player Controller");
     }
 
     void Update()
@@ -20,6 +32,11 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rigidbody2D.MovePosition(rigidbody2D.position + inputVector * movingSpeed * Time.fixedDeltaTime);
+        rigidbody2D.MovePosition(rigidbody2D.position + inputVector * _movingSpeed * Time.fixedDeltaTime);
+    }
+    public Vector3 GetPlayerScreenPosition()
+    {
+        Vector3 playerScreenPosition = _mainCamera.WorldToScreenPoint(transform.position);
+        return playerScreenPosition;
     }
 }

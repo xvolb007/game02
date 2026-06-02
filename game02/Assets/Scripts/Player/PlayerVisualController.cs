@@ -3,11 +3,12 @@ using UnityEngine;
 public class PlayerVisualController : MonoBehaviour
 {
     private Animator animator;
-    private Camera mainCamera;
+    private SpriteRenderer _spriteRenderer;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        mainCamera = Camera.main;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -22,16 +23,7 @@ public class PlayerVisualController : MonoBehaviour
     private void HandleRotation()
     {
         Vector3 mouseScreen = GameInputController.Instance.GetMousePosition();
-        Vector3 mouseWorld = mainCamera.ScreenToWorldPoint(mouseScreen);
-        mouseWorld.z = 0;
-        Vector3 direction = mouseWorld - transform.position;
-        if (direction.x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (direction.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        Vector3 playerPosition = PlayerController.Instance.GetPlayerScreenPosition();
+        _spriteRenderer.flipX = mouseScreen.x < playerPosition.x;
     }
 }
