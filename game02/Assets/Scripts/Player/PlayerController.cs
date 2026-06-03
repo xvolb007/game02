@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Player_OnPlayerAttack(object sender, EventArgs e)
     {
         Debug.Log("Pressed in Player Controller");
+        ActiveWeaponController.Instance.GetActiveWeapon().Attack();
     }
 
     void Update()
