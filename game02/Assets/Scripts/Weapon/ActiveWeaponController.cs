@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ActiveWeaponController : MonoBehaviour
 {
-    [SerializeField] private SwordController _swordController;
-    public static ActiveWeaponController Instance { get; private set; }
+    private SwordController _swordController;
+    private PlayerController _playerController;
     private void Awake()
     {
-        Instance = this;
         _swordController = GetComponentInChildren<SwordController>();
+        _playerController = GetComponentInParent<PlayerController>();
     }
     private void Update()
     {
@@ -20,7 +20,7 @@ public class ActiveWeaponController : MonoBehaviour
     private void HandleRotation()
     {
         Vector3 mousePosition = GameInputController.Instance.GetMousePosition();
-        Vector3 playerPosition = PlayerController.Instance.GetPlayerScreenPosition();
+        Vector3 playerPosition = _playerController.GetPlayerScreenPosition();
         transform.rotation = Quaternion.Euler(0, mousePosition.x < playerPosition.x ? 180 :0,0);
     }
 }

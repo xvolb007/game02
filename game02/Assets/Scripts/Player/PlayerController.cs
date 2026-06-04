@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance { get; private set; }
     private float _movingSpeed = 5f;
     private Camera _mainCamera;
 
     private Rigidbody2D rigidbody2D;
     public Vector2 inputVector;
+    private ActiveWeaponController _activeWeaponController;
 
     private void Awake()
     {
-        Instance = this;
         rigidbody2D = GetComponent<Rigidbody2D>();
         _mainCamera = Camera.main;
+        _activeWeaponController = GetComponentInChildren<ActiveWeaponController>();
     }
     private void Start()
     {
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Player_OnPlayerAttack(object sender, EventArgs e)
     {
         Debug.Log("Pressed in Player Controller");
-        ActiveWeaponController.Instance.GetActiveWeapon().Attack();
+        _activeWeaponController.GetActiveWeapon().Attack();
     }
 
     void Update()
