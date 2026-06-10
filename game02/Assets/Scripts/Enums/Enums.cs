@@ -7,7 +7,7 @@ namespace Assets.Scripts.Enums
     }
     public enum WeaponType
     {
-        Sword = 1,
-        Bow = 2
+        Sword = 0,
+        Bow = 1
     }
 }

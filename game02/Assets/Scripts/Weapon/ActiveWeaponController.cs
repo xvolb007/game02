@@ -14,8 +14,8 @@ public class ActiveWeaponController : MonoBehaviour
     
     private void Awake()
     {
-        _swordController = GetComponentInChildren<SwordController>();
-        _bowController = GetComponentInChildren<BowController>();
+        _swordController = GetComponentInChildren<SwordController>(true);
+        _bowController = GetComponentInChildren<BowController>(true);
         _playerController = GetComponentInParent<PlayerController>();
         _weapons = new IWeapon[] { _swordController, _bowController };
     }
@@ -32,7 +32,7 @@ public class ActiveWeaponController : MonoBehaviour
     }
     private void Input_OnWeaponSwitch(object sender, GameInputController.OnWeaponSwitchArgs e)
     {
-        throw new NotImplementedException();
+        SetWeapon(e.weaponType);
     }
     private void SetWeapon(WeaponType weaponType)
     {
@@ -53,7 +53,7 @@ public class ActiveWeaponController : MonoBehaviour
     }
     public IWeapon GetActiveWeapon()
     {
-        return _swordController;
+        return _activeWeapon;
     }
     private void HandleRotation()
     {
