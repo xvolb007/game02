@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     private float _movingSpeed = 5f;
     private Camera _mainCamera;
 
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         rigidbody2D = GetComponent<Rigidbody2D>();
         _mainCamera = Camera.main;
         _activeWeaponController = GetComponentInChildren<ActiveWeaponController>();
