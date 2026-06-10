@@ -145,6 +145,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SwitchWeapon",
+            "id": "3f1316fa-547f-4404-b790-fb4d5e510f60",
+            "actions": [
+                {
+                    "name": "1",
+                    "type": "Button",
+                    "id": "000092c0-f969-4160-abc3-695cf5d0e61a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "2",
+                    "type": "Button",
+                    "id": "c61cf1fa-f75f-4409-bcdb-de72f1a0e957",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b0fd32a5-78e0-44ca-a360-25ce331bcdd1",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "abb6ac58-f167-4ab0-b995-b869489ec8a1",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

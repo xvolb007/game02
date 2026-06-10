@@ -1,16 +1,18 @@
+using Assets.Scripts.Weapon;
+using System;
 using UnityEngine;
 
-public class BowController : MonoBehaviour
+public class BowController : MonoBehaviour, IWeapon
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public event EventHandler OnBowShoot;
+    public void Attack()
     {
-        
+        Debug.Log("Bow Attack");
+        OnBowShoot?.Invoke(this, EventArgs.Empty);
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject GetGameObject()
     {
-        
+        return gameObject;
     }
 }

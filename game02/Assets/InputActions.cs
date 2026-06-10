@@ -231,6 +231,54 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SwitchWeapon"",
+            ""id"": ""3f1316fa-547f-4404-b790-fb4d5e510f60"",
+            ""actions"": [
+                {
+                    ""name"": ""1"",
+                    ""type"": ""Button"",
+                    ""id"": ""000092c0-f969-4160-abc3-695cf5d0e61a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""2"",
+                    ""type"": ""Button"",
+                    ""id"": ""c61cf1fa-f75f-4409-bcdb-de72f1a0e957"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b0fd32a5-78e0-44ca-a360-25ce331bcdd1"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""abb6ac58-f167-4ab0-b995-b869489ec8a1"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -241,12 +289,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Attack = m_Combat.FindAction("Attack", throwIfNotFound: true);
+        // SwitchWeapon
+        m_SwitchWeapon = asset.FindActionMap("SwitchWeapon", throwIfNotFound: true);
+        m_SwitchWeapon__1 = m_SwitchWeapon.FindAction("1", throwIfNotFound: true);
+        m_SwitchWeapon__2 = m_SwitchWeapon.FindAction("2", throwIfNotFound: true);
     }
 
     ~@InputActions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputActions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Combat.enabled, "This will cause a leak and performance issues, InputActions.Combat.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_SwitchWeapon.enabled, "This will cause a leak and performance issues, InputActions.SwitchWeapon.Disable() has not been called.");
     }
 
     /// <summary>
@@ -510,6 +563,113 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="CombatActions" /> instance referencing this action map.
     /// </summary>
     public CombatActions @Combat => new CombatActions(this);
+
+    // SwitchWeapon
+    private readonly InputActionMap m_SwitchWeapon;
+    private List<ISwitchWeaponActions> m_SwitchWeaponActionsCallbackInterfaces = new List<ISwitchWeaponActions>();
+    private readonly InputAction m_SwitchWeapon__1;
+    private readonly InputAction m_SwitchWeapon__2;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "SwitchWeapon".
+    /// </summary>
+    public struct SwitchWeaponActions
+    {
+        private @InputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public SwitchWeaponActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "SwitchWeapon/_1".
+        /// </summary>
+        public InputAction @_1 => m_Wrapper.m_SwitchWeapon__1;
+        /// <summary>
+        /// Provides access to the underlying input action "SwitchWeapon/_2".
+        /// </summary>
+        public InputAction @_2 => m_Wrapper.m_SwitchWeapon__2;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_SwitchWeapon; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="SwitchWeaponActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(SwitchWeaponActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="SwitchWeaponActions" />
+        public void AddCallbacks(ISwitchWeaponActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SwitchWeaponActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SwitchWeaponActionsCallbackInterfaces.Add(instance);
+            @_1.started += instance.On_1;
+            @_1.performed += instance.On_1;
+            @_1.canceled += instance.On_1;
+            @_2.started += instance.On_2;
+            @_2.performed += instance.On_2;
+            @_2.canceled += instance.On_2;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="SwitchWeaponActions" />
+        private void UnregisterCallbacks(ISwitchWeaponActions instance)
+        {
+            @_1.started -= instance.On_1;
+            @_1.performed -= instance.On_1;
+            @_1.canceled -= instance.On_1;
+            @_2.started -= instance.On_2;
+            @_2.performed -= instance.On_2;
+            @_2.canceled -= instance.On_2;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="SwitchWeaponActions.UnregisterCallbacks(ISwitchWeaponActions)" />.
+        /// </summary>
+        /// <seealso cref="SwitchWeaponActions.UnregisterCallbacks(ISwitchWeaponActions)" />
+        public void RemoveCallbacks(ISwitchWeaponActions instance)
+        {
+            if (m_Wrapper.m_SwitchWeaponActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="SwitchWeaponActions.AddCallbacks(ISwitchWeaponActions)" />
+        /// <seealso cref="SwitchWeaponActions.RemoveCallbacks(ISwitchWeaponActions)" />
+        /// <seealso cref="SwitchWeaponActions.UnregisterCallbacks(ISwitchWeaponActions)" />
+        public void SetCallbacks(ISwitchWeaponActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SwitchWeaponActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SwitchWeaponActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="SwitchWeaponActions" /> instance referencing this action map.
+    /// </summary>
+    public SwitchWeaponActions @SwitchWeapon => new SwitchWeaponActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
     /// </summary>
@@ -539,5 +699,27 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "SwitchWeapon" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="SwitchWeaponActions.AddCallbacks(ISwitchWeaponActions)" />
+    /// <seealso cref="SwitchWeaponActions.RemoveCallbacks(ISwitchWeaponActions)" />
+    public interface ISwitchWeaponActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void On_2(InputAction.CallbackContext context);
     }
 }
