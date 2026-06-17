@@ -1358,6 +1358,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 987700668189092942, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
   m_PrefabInstance: {fileID: 1531059460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1582621343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 750800535059363186, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
+  m_PrefabInstance: {fileID: 588287907270956531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1584371639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1678,16 +1683,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8745549512786648139, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745549512786648139, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 750800535059363186, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 588287907270956536}
   m_SourcePrefab: {fileID: 100100000, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
 --- !u!4 &588287907270956532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 987700668189092942, guid: fbe5269c4626eb54283f87e45eb84ee9, type: 3}
   m_PrefabInstance: {fileID: 588287907270956531}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &588287907270956536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582621343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2cb0190a5c097408e47dffe0c2772b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAIController
+  _roamingDistanceMax: 0
+  _roamingDistanceMin: 0
+  startingState: 0
+  _roamingTimerMax: 0
 --- !u!1001 &3014319305535799575
 PrefabInstance:
   m_ObjectHideFlags: 0
